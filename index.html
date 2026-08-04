@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pollito Chicken — Salé | Poulet Frit & Fast-Food</title>
+  <meta name="description" content="Pollito Chicken à Salé : bokka, burgers, tacos, crunchy et plats de poulet frit croustillant. Ouvert tous les jours de 12h à 1h. Commandez par téléphone au 05 38 10 70 53.">
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Reusable icon sprite: referenced via <use href="#icon-x"/> throughout the page -->
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
+    </symbol>
+    <symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 14.5A2.5 2.5 0 0 0 11 17a2.5 2.5 0 0 0 2.5-2.5c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7.5 7.5 0 1 1-15 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo-link" aria-label="Pollito Chicken — Accueil">
+        <img src="assets/images/logo.jpg" alt="Pollito Chicken" class="logo-img">
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#histoire">Notre Histoire</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#offres">Offres</a></li>
+          <li><a href="#contact">Nous Trouver</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+212538107053" class="btn btn-call header-call-btn">
+          <svg class="icon"><use href="#icon-phone"/></svg>
+          <span>05 38 10 70 53</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+          <svg class="icon nav-toggle-icon-open"><use href="#icon-menu"/></svg>
+          <svg class="icon nav-toggle-icon-close"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container hero-inner">
+        <div class="hero-content reveal">
+          <p class="hero-eyebrow">Salé · Poulet Frit</p>
+          <h1>Du poulet croustillant,<br>livré avec passion.</h1>
+          <p class="hero-text">Bokka, burgers, tacos, crunchy et plats généreux — fait minute, tous les jours de 12h à 1h.</p>
+          <div class="hero-actions">
+            <a href="tel:+212538107053" class="btn btn-primary">Commander Maintenant</a>
+            <a href="#menu" class="btn btn-secondary">Voir le Menu</a>
+          </div>
+        </div>
+        <div class="hero-media reveal">
+          <img src="assets/images/logo.jpg" alt="Pollito Chicken" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-inner">
+        <div class="trust-item"><svg class="icon"><use href="#icon-clock"/></svg><span>Ouvert jusqu'à 1h</span></div>
+        <div class="trust-item"><svg class="icon"><use href="#icon-flame"/></svg><span>Fait minute</span></div>
+        <a class="trust-item trust-item-link" href="https://search.google.com/local/writereview?placeid=0xda7692af291495f:0xc22f956e4c6daf16" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#icon-star"/></svg><span>4.3★ sur Google — Laissez un avis</span></a>
+        <div class="trust-item"><svg class="icon"><use href="#icon-pin"/></svg><span>Hay Chmaou, Salé</span></div>
+      </div>
+    </div>
+    <section class="menu" id="menu">
+      <div class="container">
+        <h2 class="section-title reveal">Notre Menu</h2>
+        <p class="section-subtitle reveal">Cinq façons de se régaler, tous les jours de 12h à 1h.</p>
+
+        <div class="menu-tabs" role="tablist" aria-label="Catégories du menu">
+          <button class="menu-tab is-active" role="tab" id="tab-bokka" aria-selected="true" aria-controls="panel-bokka" data-target="panel-bokka">Bokka</button>
+          <button class="menu-tab" role="tab" id="tab-burgers" aria-selected="false" aria-controls="panel-burgers" data-target="panel-burgers">Burgers</button>
+          <button class="menu-tab" role="tab" id="tab-tacos" aria-selected="false" aria-controls="panel-tacos" data-target="panel-tacos">Tacos</button>
+          <button class="menu-tab" role="tab" id="tab-crunchy" aria-selected="false" aria-controls="panel-crunchy" data-target="panel-crunchy">Crunchy</button>
+          <button class="menu-tab" role="tab" id="tab-plats" aria-selected="false" aria-controls="panel-plats" data-target="panel-plats">Plats</button>
+        </div>
+
+        <div class="menu-panels">
+          <div class="menu-panel is-active" id="panel-bokka" role="tabpanel" aria-labelledby="tab-bokka">
+            <ul class="menu-expand" data-menu-expand>
+              <li class="menu-expand-item featured" tabindex="0">
+                <img src="assets/images/menu-items/bokka-spicy.jpg" alt="Bokka Spicy" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Bokka Spicy</span><span class="price">39 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Bokka Spicy</h3>
+                  <p>Pain spicy, strips, dinde fumée, cheddar, laitue, sauce algérienne</p>
+                  <span class="price">39 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/pizza.jpg" alt="Pizza" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Pizza</span><span class="price">39 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Pizza</h3>
+                  <p>Pain méga en thym, strips, pepperoni, cheddar, mozzarella, olives noires, ketchup & mayo</p>
+                  <span class="price">39 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/original.jpg" alt="Original" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Original</span><span class="price">39 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Original</h3>
+                  <p>Pain original, strips, dinde fumée, laitue, fromage, mayo & ketchup</p>
+                  <span class="price">39 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/jalapino-bokka.jpg" alt="Jalapiño" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Jalapiño</span><span class="price">39 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Jalapiño</h3>
+                  <p>Strips, dinde fumée, cheddar, sauce samouraï</p>
+                  <span class="price">39 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/chilli.jpg" alt="Chilli" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Chilli</span><span class="price">39 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Chilli</h3>
+                  <p>Pain spicy, strips, dinde fumée, cheddar, laitue, sauce chilli thaï</p>
+                  <span class="price">39 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/mini-bokka.jpg" alt="Mini Bokka" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Mini Bokka</span><span class="price">33 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Mini Bokka</h3>
+                  <p>Pain original, strips, dinde fumée, cheddar, mayo & ketchup</p>
+                  <span class="price">33 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/swiss-bokka.jpg" alt="Swiss" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Swiss</span><span class="price">50 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Swiss</h3>
+                  <p>Pain original, strips, dinde fumée, cheddar, sautée champignons, creamy fromager swiss</p>
+                  <span class="price">50 DH</span>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" id="panel-burgers" role="tabpanel" aria-labelledby="tab-burgers" hidden>
+            <ul class="menu-expand" data-menu-expand>
+              <li class="menu-expand-item featured" tabindex="0">
+                <img src="assets/images/menu-items/el-capo-spicy.jpg" alt="El Capo Spicy" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>El Capo Spicy</span><span class="price">42 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>El Capo Spicy</h3>
+                  <p>Double steak, cheddar, sauce algérienne</p>
+                  <span class="price">42 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/el-pollo.jpg" alt="El Pollo" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>El Pollo</span><span class="price">28 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>El Pollo</h3>
+                  <p>2 strips crispy, cheddar, sauce biggy</p>
+                  <span class="price">28 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/suprimo.jpg" alt="Suprimo" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Suprimo</span><span class="price">28 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Suprimo</h3>
+                  <p>Double steak, cheddar, sauce biggy</p>
+                  <span class="price">28 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/el-classico.jpg" alt="El Classico" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>El Classico</span><span class="price">42 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>El Classico</h3>
+                  <p>4 strips crispy, cheddar, sauce biggy</p>
+                  <span class="price">42 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/el-capo.jpg" alt="El Capo" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>El Capo</span><span class="price">42 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>El Capo</h3>
+                  <p>Steak, cheddar, sauce biggy</p>
+                  <span class="price">42 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/jalapino-burger.jpg" alt="Jalapiño" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Jalapiño</span><span class="price">45 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Jalapiño</h3>
+                  <p>Double steak, jalapeños, spicy special</p>
+                  <span class="price">45 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/swiss-burger.jpg" alt="Swiss" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Swiss</span><span class="price">50 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Swiss</h3>
+                  <p>Double steak, sautée champignons, creamy fromager swiss</p>
+                  <span class="price">50 DH</span>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" id="panel-tacos" role="tabpanel" aria-labelledby="tab-tacos" hidden>
+            <ul class="menu-expand" data-menu-expand>
+              <li class="menu-expand-item featured" tabindex="0">
+                <img src="assets/images/menu-items/tacos-boursin.jpg" alt="Tacos Boursin" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Tacos Boursin</span><span class="price">42 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Tacos Boursin</h3>
+                  <p>Steak poulet, cheddar, sauce biggy, fromage Boursin</p>
+                  <span class="price">42 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/viande-hachee.jpg" alt="Viande Hachée" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Viande Hachée</span><span class="price">40 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Viande Hachée</h3>
+                  <p>Viande hachée, cheddar, sauce au choix</p>
+                  <span class="price">40 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/poulet.jpg" alt="Poulet" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Poulet</span><span class="price">37 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Poulet</h3>
+                  <p>Steak poulet, cheddar, sauce au choix</p>
+                  <span class="price">37 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/tacos-crispe.jpg" alt="Tacos Crispé" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Tacos Crispé</span><span class="price">38 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Tacos Crispé</h3>
+                  <p>Strips crispy, cheddar, sauce biggy</p>
+                  <span class="price">38 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/cordon-bleu.jpg" alt="Cordon Bleu" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Cordon Bleu</span><span class="price">38 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Cordon Bleu</h3>
+                  <p>Cordon bleu, cheddar, sauce au choix</p>
+                  <span class="price">38 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/jalapino-tacos.jpg" alt="Jalapiño" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Jalapiño</span><span class="price">45 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Jalapiño</h3>
+                  <p>Viande hachée et poulet, jalapeños, spicy algérien</p>
+                  <span class="price">45 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/swiss-tacos.jpg" alt="Swiss" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Swiss</span><span class="price">50 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Swiss</h3>
+                  <p>Steak poulet, sautée champignons, creamy fromager swiss</p>
+                  <span class="price">50 DH</span>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" id="panel-crunchy" role="tabpanel" aria-labelledby="tab-crunchy" hidden>
+            <ul class="menu-expand" data-menu-expand>
+              <li class="menu-expand-item featured" tabindex="0">
+                <img src="assets/images/menu-items/crunchy-box.jpg" alt="Crunchy Box" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Crunchy Box</span><span class="price">45 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Crunchy Box</h3>
+                  <p>Notre box croustillante généreuse : tenders, onion rings, nuggets et sauce</p>
+                  <span class="price">45 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/chili-cheese.jpg" alt="Chili Cheese" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Chili Cheese</span><span class="price">25 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Chili Cheese</h3>
+                  <span class="price">25 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/mozzastick.jpg" alt="Mozzastick" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Mozzastick</span><span class="price">25 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Mozzastick</h3>
+                  <span class="price">25 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/onion-ring.jpg" alt="Onion Ring" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Onion Ring</span><span class="price">15 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Onion Ring</h3>
+                  <span class="price">15 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/nugget.jpg" alt="Nugget" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Nugget</span><span class="price">15 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Nugget</h3>
+                  <span class="price">15 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/potatos-crispe.jpg" alt="Potatos Crispe" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Potatos Crispe</span><span class="price">15 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Potatos Crispe</h3>
+                  <span class="price">15 DH</span>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-panel" id="panel-plats" role="tabpanel" aria-labelledby="tab-plats" hidden>
+            <ul class="menu-expand" data-menu-expand>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/tenders.jpg" alt="Tenders x5" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Tenders x5</span><span class="price">35 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Tenders x5</h3>
+                  <span class="price">35 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/chicken-box.jpg" alt="Chicken Box" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Chicken Box</span><span class="price">45 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Chicken Box</h3>
+                  <span class="price">45 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item featured" tabindex="0">
+                <img src="assets/images/menu-items/king-strips.jpg" alt="King Strips" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>King Strips</span><span class="price">49 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>King Strips</h3>
+                  <p>Combo : strips, burger, frites et boisson</p>
+                  <span class="price">49 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/mac-cheese.jpg" alt="Mac & Cheese" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Mac & Cheese</span><span class="price">35 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Mac & Cheese</h3>
+                  <span class="badge-limited">Quantité limitée</span>
+                  <span class="price">35 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/kabsa.jpg" alt="Kabsa" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Kabsa</span><span class="price">29 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Kabsa</h3>
+                  <span class="badge-limited">Quantité limitée</span>
+                  <span class="price">29 DH</span>
+                </article>
+              </li>
+              <li class="menu-expand-item" tabindex="0">
+                <img src="assets/images/menu-items/tiramisu.jpg" alt="Tiramisu" class="menu-expand-img" loading="lazy">
+                <div class="menu-expand-scrim"></div>
+                <div class="menu-expand-label"><span>Tiramisu</span><span class="price">20 DH</span></div>
+                <article class="menu-expand-content">
+                  <h3>Tiramisu</h3>
+                  <p>Dessert</p>
+                  <span class="price">20 DH</span>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="histoire" id="histoire">
+      <div class="container histoire-inner">
+        <div class="histoire-media reveal">
+          <img src="assets/images/logo.jpg" alt="Le coq mascotte de Pollito Chicken" class="histoire-img">
+        </div>
+        <div class="histoire-content reveal">
+          <h2 class="section-title histoire-title">Notre Histoire</h2>
+          <p>Pollito Chicken est né à Salé avec une idée simple : servir du poulet frit vraiment croustillant, généreux, et toujours fait minute. Pas de raccourcis, pas de compromis sur le goût.</p>
+          <p>De nos bokka signature à nos burgers doubles steak, chaque recette est pensée pour un seul objectif : vous faire kiffer chaque bouchée. Aujourd'hui, on est fiers de nourrir tout un quartier, un poulet à la fois.</p>
+        </div>
+      </div>
+    </section>
+    <section class="galerie" id="galerie">
+      <div class="container">
+        <h2 class="section-title reveal">Galerie</h2>
+        <p class="section-subtitle reveal">La carte complète, catégorie par catégorie.</p>
+        <div class="gallery-grid reveal">
+          <img src="assets/images/menu-bokka.png" alt="Menu complet Nos Bokka" class="gallery-img" loading="lazy">
+          <img src="assets/images/menu-burgers.png" alt="Menu complet Nos Burgers" class="gallery-img" loading="lazy">
+          <img src="assets/images/menu-tacos.png" alt="Menu complet Nos Tacos" class="gallery-img" loading="lazy">
+          <img src="assets/images/menu-crunchy.png" alt="Menu complet Nos Crunchy" class="gallery-img" loading="lazy">
+          <img src="assets/images/menu-plats.jpeg" alt="Menu complet Plats" class="gallery-img" loading="lazy">
+        </div>
+        <a href="https://www.instagram.com/pollito_chicken_sale" target="_blank" rel="noopener noreferrer" class="instagram-callout reveal">
+          <svg class="icon"><use href="#icon-instagram"/></svg>
+          <span>Suivez-nous @pollito_chicken_sale</span>
+        </a>
+      </div>
+    </section>
+    <section class="offres" id="offres">
+      <div class="container">
+        <h2 class="section-title reveal">Offres du Moment</h2>
+        <p class="section-subtitle reveal">Nos best-sellers, à ne pas manquer.</p>
+        <div class="offres-grid">
+          <article class="offre-card reveal">
+            <span class="offre-badge">Best-seller</span>
+            <h3>Crunchy Box</h3>
+            <p>Notre box croustillante généreuse : tenders, onion rings, nuggets et sauce.</p>
+            <span class="price">45 DH</span>
+          </article>
+          <article class="offre-card reveal">
+            <span class="offre-badge">Combo</span>
+            <h3>King Strips</h3>
+            <p>Strips croustillants, burger, frites et boisson. Le combo complet.</p>
+            <span class="price">49 DH</span>
+          </article>
+          <article class="offre-card reveal">
+            <span class="offre-badge">Signature</span>
+            <h3>Bokka Spicy</h3>
+            <p>Notre sandwich signature : pain spicy, strips, dinde fumée, cheddar, sauce algérienne.</p>
+            <span class="price">39 DH</span>
+          </article>
+        </div>
+        <p class="offres-note reveal">Mac &amp; Cheese et Kabsa sont disponibles en quantité limitée — premier arrivé, premier servi.</p>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="container contact-inner">
+        <div class="contact-info reveal">
+          <h2 class="section-title contact-title">Nous Trouver</h2>
+          <ul class="contact-list">
+            <li><svg class="icon"><use href="#icon-pin"/></svg><span>Hay Chmaou, Salé</span></li>
+            <li><svg class="icon"><use href="#icon-clock"/></svg><span>Tous les jours · 12h00 – 01h00</span></li>
+            <li><svg class="icon"><use href="#icon-phone"/></svg><a href="tel:+212538107053">05 38 10 70 53</a></li>
+            <li><svg class="icon"><use href="#icon-instagram"/></svg><a href="https://www.instagram.com/pollito_chicken_sale" target="_blank" rel="noopener noreferrer">@pollito_chicken_sale</a></li>
+          </ul>
+          <div class="contact-actions">
+            <a href="tel:+212538107053" class="btn btn-call">Appeler pour commander</a>
+            <a href="https://search.google.com/local/writereview?placeid=0xda7692af291495f:0xc22f956e4c6daf16" target="_blank" rel="noopener noreferrer" class="btn btn-review">
+              <svg class="icon"><use href="#icon-star"/></svg>
+              <span>Laisser un avis Google</span>
+            </a>
+          </div>
+        </div>
+        <div class="contact-map reveal">
+          <iframe
+            src="https://www.google.com/maps?cid=13992566868224618262&output=embed"
+            title="Localisation de Pollito Chicken à Salé"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="assets/images/logo.jpg" alt="Pollito Chicken" class="footer-logo">
+      <nav class="footer-nav" aria-label="Liens du pied de page">
+        <a href="#menu">Menu</a>
+        <a href="#histoire">Notre Histoire</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#offres">Offres</a>
+        <a href="#contact">Nous Trouver</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="tel:+212538107053">05 38 10 70 53</a>
+        <a href="https://www.instagram.com/pollito_chicken_sale" target="_blank" rel="noopener noreferrer">@pollito_chicken_sale</a>
+      </div>
+      <p class="footer-hours">Hay Chmaou, Salé · Tous les jours 12h–01h</p>
+      <p class="footer-copyright">&copy; 2026 Pollito Chicken. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
