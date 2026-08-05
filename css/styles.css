@@ -302,12 +302,19 @@ a:focus-visible, button:focus-visible {
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.85rem;
-  white-space: nowrap;
-  overflow: hidden;
   opacity: 1;
   transition: opacity 200ms ease;
 }
+.menu-expand-label span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .menu-expand-label .price { color: var(--color-gold); flex-shrink: 0; }
+@media (max-width: 767px) {
+  .menu-expand-label { font-size: 0.75rem; padding: var(--space-xs) var(--space-xs); }
+}
 .menu-expand-item:hover .menu-expand-label,
 .menu-expand-item:focus-visible .menu-expand-label,
 .menu-expand-item.is-active .menu-expand-label { opacity: 0; }

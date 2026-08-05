@@ -43,9 +43,6 @@ expandContainers.forEach((container) => {
   const items = Array.from(container.children);
 
   items.forEach((item) => {
-    if (item.classList.contains('featured')) {
-      item.classList.add('is-active');
-    }
     item.addEventListener('click', () => {
       const willActivate = !item.classList.contains('is-active');
       items.forEach((i) => i.classList.remove('is-active'));
