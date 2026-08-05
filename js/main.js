@@ -54,6 +54,15 @@ expandContainers.forEach((container) => {
   });
 });
 
+const callButtons = document.querySelectorAll('.btn-call');
+const isDesktop = window.matchMedia('(min-width: 768px)');
+
+callButtons.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    if (isDesktop.matches) e.preventDefault();
+  });
+});
+
 const revealEls = document.querySelectorAll('.reveal');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
