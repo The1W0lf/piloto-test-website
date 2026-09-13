@@ -1,62 +1,16 @@
-    <section class="menu order-menu" id="menu" aria-labelledby="menu-title">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/order.css">
+<section class="menu order-menu" id="menu" aria-labelledby="menu-title">
       <div class="container">
         <h2 class="section-title reveal" id="menu-title">Notre Menu</h2>
         <p class="section-subtitle reveal">Découvrez nos six catégories et composez votre commande en quelques clics.</p>
-        <div style="text-align:center">
+        <div class="po-open-wrap">
           <button type="button" class="btn po-open reveal" data-order-open aria-haspopup="dialog" aria-controls="commander">Composer ma commande</button>
         </div>
       </div>
       <div id="commander" class="po-dialog" role="dialog" aria-modal="true" aria-labelledby="pollito-order-title" hidden>
         <div class="po-dialog-card">
           <button type="button" class="po-close" aria-label="Fermer la commande">×</button>
-      <style>
-        #menu .po-open { background:var(--color-primary,#E31E24); color:white; border:0; margin-top:8px; }
-        #menu .po-open:hover { background:var(--color-primary-dark,#A81419); transform:translateY(-2px); }
-        #commander { position:fixed; inset:0; z-index:1000; display:grid; place-items:center; overflow:auto; padding:16px; background:rgba(26,26,26,.68); backdrop-filter:blur(4px); color:var(--color-ink,#1A1A1A); font:16px/1.5 var(--font-body,'Nunito',sans-serif); }
-        #commander[hidden] { display:none!important; }
-        #commander .po-dialog-card { position:relative; width:min(1168px,100%); height:min(780px,calc(100dvh - 32px)); overflow:hidden; border-radius:24px; background:var(--color-cream,#FFF8F0); box-shadow:0 24px 70px rgba(26,26,26,.28); animation:po-enter 220ms ease-out; }
-        #commander .po-close { position:sticky; z-index:2; top:12px; float:right; margin:12px 12px -56px 0; border:0; border-radius:999px; background:#fff; color:#A81419; font-size:28px; line-height:1; box-shadow:0 4px 16px rgba(26,26,26,.14); }
-        body.po-modal-open { overflow:hidden; }
-        @keyframes po-enter { from { opacity:0; transform:translateY(12px) scale(.985); } to { opacity:1; transform:none; } }
-        #commander * { box-sizing:border-box; }
-        #commander .po-wrap { width:100%; height:100%; margin:auto; padding:32px; display:flex; flex-direction:column; overflow:hidden; }
-        #commander h2,#commander h3,#commander button { font-family:var(--font-heading,'Fredoka',sans-serif); }
-        #commander h2 { color:var(--color-primary,#E31E24); font-size:clamp(28px,4vw,40px); margin:0 0 12px; }
-        #commander .po-intro { margin:0 0 24px; }
-        #commander .po-layout { display:grid; grid-template-columns:minmax(0,2fr) minmax(280px,1fr); gap:24px; align-items:stretch; flex:1; min-height:0; }
-        #commander .po-menu-column { display:flex; flex-direction:column; min-height:0; }
-        #commander .po-filters { display:flex; flex-wrap:wrap; flex:none; gap:8px; margin-bottom:12px; }
-        #commander button { min-height:44px; min-width:44px; cursor:pointer; border:1px solid #decfc5; border-radius:12px; background:white; color:#1A1A1A; font-size:16px; padding:8px 12px; transition:background 180ms; }
-        #commander button:focus-visible,#commander a:focus-visible { outline:3px solid #A81419; outline-offset:3px; }
-        #commander button[aria-pressed="true"] { background:#A81419; color:white; border-color:#A81419; }
-        #commander button:disabled { opacity:.45; cursor:default; }
-        #commander .po-products { position:relative; flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; scrollbar-gutter:stable; padding:0 8px 20px 0; scroll-behavior:smooth; }
-        #commander .po-category-section { scroll-margin-top:8px; }
-        #commander .po-category-section + .po-category-section { margin-top:24px; }
-        #commander .po-category-title { color:#1A1A1A; font-size:20px; margin:0 0 10px; }
-        #commander .po-category-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-        #commander .po-product { background:white; border:1px solid #eadbd0; border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:12px; }
-        #commander .po-product img { width:72px; height:72px; object-fit:cover; border-radius:12px; }
-        #commander h3 { font-size:18px; line-height:1.35; margin:0; overflow-wrap:anywhere; }
-        #commander .po-price { color:#A81419; font-weight:800; margin:0; }
-        #commander .po-picker { display:flex; align-items:center; gap:12px; margin-top:auto; }
-        #commander output { min-width:24px; text-align:center; font-weight:800; }
-        #commander .po-cart { align-self:start; max-height:100%; overflow-y:auto; background:white; border:1px solid #eadbd0; border-radius:24px; padding:24px; box-shadow:0 4px 16px #1a1a1a0d; }
-        #commander .po-lines { list-style:none; padding:0; margin:16px 0; }
-        #commander .po-lines li { padding:12px 0; border-bottom:1px solid #eadbd0; }
-        #commander .po-line-top { display:flex; justify-content:space-between; gap:12px; }
-        #commander .po-line-top span { flex-shrink:0; }
-        #commander .po-lines .po-picker { margin-top:8px; }
-        #commander .po-total { display:flex; justify-content:space-between; gap:12px; font-size:20px; margin:16px 0; }
-        #commander .po-send { display:block; text-align:center; background:#A81419; color:white; padding:14px 16px; border-radius:16px; font-weight:800; text-decoration:none; }
-        #commander .po-send[aria-disabled="true"] { background:#eee5de; color:#65594f; cursor:default; }
-        #commander .po-note { font-size:14px; margin:12px 0 0; color:#555; }
-        #commander [hidden] { display:none!important; }
-        #commander .po-status { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
-        @media(max-width:767px) { #commander { padding:0; place-items:stretch; } #commander .po-dialog-card { width:100%; height:100dvh; border-radius:0; } #commander .po-wrap { padding:24px 16px calc(16px + env(safe-area-inset-bottom)); } #commander h2 { font-size:28px; line-height:1.12; padding-right:48px; } #commander .po-intro { margin-bottom:14px; padding-right:36px; } #commander .po-layout { grid-template-columns:1fr; grid-template-rows:minmax(0,1fr) auto; gap:12px; } #commander .po-cart { width:100%; max-height:32dvh; padding:16px; border-radius:18px; } #commander .po-cart .po-note { display:none; } #commander .po-total { margin:10px 0; } #commander .po-product { padding:12px; } #commander h3 { font-size:16px; } }
-        @media(max-width:359px) { #commander .po-category-grid { grid-template-columns:1fr; } }
-        @media(prefers-reduced-motion:reduce) { #commander button { transition:none; } }
-      </style>
       <div class="po-wrap">
         <h2 id="pollito-order-title" tabindex="-1">Composez votre commande</h2>
         <p class="po-intro">Choisissez vos envies, ajustez les quantités et envoyez votre commande sur WhatsApp.</p>
@@ -78,170 +32,7 @@
         <noscript>Activez JavaScript pour composer votre commande, ou contactez-nous sur WhatsApp au +212 645 733 161.</noscript>
       </div>
       <script type="application/json" class="po-data">[{"name":"Bokka Spicy","price":39,"image":"assets/images/menu-items/bokka-spicy.jpg","category":"bokka"},{"name":"Bokka Pizza","price":39,"image":"assets/images/menu-items/pizza.jpg","category":"bokka"},{"name":"Bokka Original","price":39,"image":"assets/images/menu-items/original.jpg","category":"bokka"},{"name":"Bokka Chili","price":50,"image":"assets/images/menu-items/chilli.jpg","category":"bokka"},{"name":"Bokka Swiss","price":50,"image":"assets/images/menu-items/swiss-bokka.jpg","category":"bokka"},{"name":"Burger El Pollo","price":28,"image":"assets/images/menu-items/el-pollo.jpg","category":"burgers"},{"name":"Burger Suprimo","price":28,"image":"assets/images/menu-items/suprimo.jpg","category":"burgers"},{"name":"Burger El Classico","price":42,"image":"assets/images/menu-items/el-classico.jpg","category":"burgers"},{"name":"Burger El Capo","price":42,"image":"assets/images/menu-items/el-capo.jpg","category":"burgers"},{"name":"Tacos Boursin","price":42,"image":"assets/images/menu-items/tacos-boursin.jpg","category":"tacos"},{"name":"Tacos Viande Hachée","price":40,"image":"assets/images/menu-items/viande-hachee.jpg","category":"tacos"},{"name":"Tacos Poulet","price":37,"image":"assets/images/menu-items/poulet.jpg","category":"tacos"},{"name":"Tacos Crispé","price":38,"image":"assets/images/menu-items/tacos-crispe.jpg","category":"tacos"},{"name":"Tacos Cordon Bleu","price":38,"image":"assets/images/menu-items/cordon-bleu.jpg","category":"tacos"},{"name":"Tacos Jalapiño","price":45,"image":"assets/images/menu-items/jalapino-tacos.jpg","category":"tacos"},{"name":"Wrap Crispé","price":55,"image":"assets/images/menu-items/wrap-crispy.jpg","category":"paninis"},{"name":"Panini Crispé","price":40,"image":"assets/images/menu-items/panini-crispy.jpg","category":"paninis"},{"name":"Tenders x5","price":35,"image":"assets/images/menu-items/tenders.jpg","category":"plats"},{"name":"Frites au Fromage","price":35,"image":"assets/images/menu-items/cheese-fries.jpg","category":"plats"},{"name":"Nuggets Chili Fromage","price":25,"image":"assets/images/menu-items/chili-cheese.jpg","category":"plats"},{"name":"Bâtonnets de Mozzarella","price":25,"image":"assets/images/menu-items/mozzastick.jpg","category":"plats"},{"name":"Rondelles d'Oignon","price":15,"image":"assets/images/menu-items/onion-ring.jpg","category":"plats"},{"name":"Nuggets","price":15,"image":"assets/images/menu-items/nugget.jpg","category":"plats"},{"name":"Coca Cola","price":12,"image":"assets/images/menu-items/coca-cola.jpg","category":"boissons"},{"name":"Fanta Orange","price":12,"image":"assets/images/menu-items/fanta-orange.jpg","category":"boissons"},{"name":"Sprite","price":12,"image":"assets/images/menu-items/sprite.jpg","category":"boissons"},{"name":"Hawaï Tropical","price":12,"image":"assets/images/menu-items/hawai-tropical.jpg","category":"boissons"},{"name":"Pom's Pomme","price":15,"image":"assets/images/menu-items/poms-pomme.jpg","category":"boissons"}]</script>
-      <script>
-      (() => {
-        const root = document.currentScript.closest('#commander');
-        const openButtons = document.querySelectorAll('[data-order-open]');
-        const closeButton = root.querySelector('.po-close');
-        const focusableSelector = 'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
-        let returnFocus;
-        openButtons.forEach(button => button.setAttribute('aria-expanded', 'false'));
-        const openOrder = event => {
-          if (event) event.preventDefault();
-          returnFocus = event?.currentTarget || document.activeElement;
-          root.hidden = false;
-          document.body.classList.add('po-modal-open');
-          openButtons.forEach(button => button.setAttribute('aria-expanded', 'true'));
-          root.querySelector('#pollito-order-title').focus();
-        };
-        const closeOrder = () => {
-          root.hidden = true;
-          document.body.classList.remove('po-modal-open');
-          openButtons.forEach(button => button.setAttribute('aria-expanded', 'false'));
-          if (returnFocus && typeof returnFocus.focus === 'function') returnFocus.focus();
-        };
-        openButtons.forEach(button => button.addEventListener('click', openOrder));
-        closeButton.addEventListener('click', closeOrder);
-        root.addEventListener('click', event => { if (event.target === root) closeOrder(); });
-        document.addEventListener('keydown', event => {
-          if (root.hidden) return;
-          if (event.key === 'Escape') {
-            closeOrder();
-            return;
-          }
-          if (event.key !== 'Tab') return;
-          const focusable = Array.from(root.querySelectorAll(focusableSelector)).filter(element => !element.closest('[hidden]'));
-          const first = focusable[0];
-          const last = focusable[focusable.length - 1];
-          if (event.shiftKey && document.activeElement === first) {
-            event.preventDefault();
-            last.focus();
-          } else if (!event.shiftKey && document.activeElement === last) {
-            event.preventDefault();
-            first.focus();
-          }
-        });
-        const items = JSON.parse(root.querySelector('.po-data').textContent);
-        const quantities = items.map(() => 0);
-        const money = value => new Intl.NumberFormat('fr-MA', { maximumFractionDigits: 2 }).format(value) + ' DH';
-        const names = { all:'Tout', bokka:'Bokka', burgers:'Burgers', tacos:'Tacos', paninis:'Paninis', plats:'Plats', boissons:'Boissons' };
-        const el = (tag, cls, text) => { const node = document.createElement(tag); if(cls) node.className = cls; if(text !== undefined) node.textContent = text; return node; };
-        const products = root.querySelector('.po-products');
-        const controls = [];
-        function picker(index, location) {
-          const group = el('div','po-picker');
-          const minus = el('button','','−'), plus = el('button','','+'), count = el('output','', '0');
-          [minus,plus].forEach(button => button.type='button');
-          minus.setAttribute('aria-label','Retirer un ' + items[index].name);
-          plus.setAttribute('aria-label','Ajouter un ' + items[index].name);
-          count.setAttribute('aria-label','Quantité de ' + items[index].name);
-          minus.dataset.index=plus.dataset.index=index;
-          minus.dataset.delta='-1'; plus.dataset.delta='1';
-          minus.dataset.location=plus.dataset.location=location;
-          group.append(minus,count,plus);
-          controls.push({index,minus,plus,count});
-          return group;
-        }
-        const filters=root.querySelector('.po-filters');
-        const categorySections = new Map();
-        Object.keys(names).filter(key => key !== 'all').forEach(key => {
-          const section = el('div','po-category-section');
-          section.dataset.category = key;
-          section.setAttribute('role','group');
-          const heading = el('h3','po-category-title',names[key]);
-          heading.id = 'po-category-' + key;
-          section.setAttribute('aria-labelledby',heading.id);
-          const grid = el('div','po-category-grid');
-          items.forEach((item,index) => {
-            if (item.category !== key) return;
-            const card = el('article','po-product'); card.dataset.category=item.category;
-            const img=el('img'); img.src=item.image; img.alt=''; img.loading='lazy'; img.width=72; img.height=72;
-            card.append(img,el('h3','',item.name),el('p','po-price',money(item.price)),picker(index,'product'));
-            grid.append(card);
-          });
-          section.append(heading,grid);
-          products.append(section);
-          categorySections.set(key,section);
-        });
-        const filterButtons = new Map();
-        const setActiveCategory = key => {
-          filterButtons.forEach((button,buttonKey) => button.setAttribute('aria-pressed',String(buttonKey===key)));
-        };
-        Object.entries(names).forEach(([key,label]) => {
-          const button=el('button','',label); button.type='button'; button.setAttribute('aria-pressed',String(key==='all'));
-          button.addEventListener('click', () => {
-            setActiveCategory(key);
-            const target = key==='all' ? 0 : categorySections.get(key).offsetTop;
-            products.scrollTo({ top:target, behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth' });
-          });
-          filters.append(button);
-          filterButtons.set(key,button);
-        });
-        let scrollFrame;
-        const syncCategoryToScroll = () => {
-          scrollFrame = 0;
-          if (products.scrollTop <= 8) {
-            setActiveCategory('all');
-            return;
-          }
-          if (products.scrollTop + products.clientHeight >= products.scrollHeight - 8) {
-            setActiveCategory('boissons');
-            return;
-          }
-          const marker = products.scrollTop + Math.min(120,products.clientHeight*.28);
-          let current = 'bokka';
-          categorySections.forEach((section,key) => { if (section.offsetTop <= marker) current=key; });
-          setActiveCategory(current);
-        };
-        products.addEventListener('scroll',() => {
-          if (!scrollFrame) scrollFrame=requestAnimationFrame(syncCategoryToScroll);
-        },{passive:true});
-        const lines=root.querySelector('.po-lines');
-        const rows=items.map((item,index)=>{
-          const row=el('li'); const top=el('div','po-line-top'); const subtotal=el('span');
-          top.append(el('strong','',item.name),subtotal); row.append(top,picker(index,'cart')); lines.append(row);
-          return {row,subtotal};
-        });
-        const send=root.querySelector('.po-send');
-        function update() {
-          let total=0, count=0;
-          const message=['Bonjour Pollito Chicken !','Je souhaite commander :',''];
-          items.forEach((item,index)=>{
-            const qty=quantities[index], subtotal=qty*item.price;
-            total+=subtotal; count+=qty;
-            rows[index].row.hidden=!qty;
-            rows[index].subtotal.textContent=money(subtotal);
-            if(qty) message.push(qty+' × '+item.name+' — '+money(item.price)+' / unité — Sous-total : '+money(subtotal));
-          });
-          controls.forEach(({index,minus,plus,count})=>{
-            count.value=String(quantities[index]); count.textContent=String(quantities[index]);
-            minus.disabled=quantities[index]===0; plus.disabled=quantities[index]===99;
-          });
-          root.querySelector('.po-empty').hidden=count>0;
-          root.querySelector('.po-total-value').textContent=money(total);
-          send.setAttribute('aria-disabled',String(!count));
-          if(count) {
-            message.push('', 'Total : '+money(total), 'Merci de confirmer la disponibilité et les éventuels frais de livraison.');
-            send.href='https://wa.me/212645733161?text='+encodeURIComponent(message.join('\n'));
-          } else send.removeAttribute('href');
-          root.querySelector('.po-status').textContent=count+' article(s) dans votre commande. Total : '+money(total);
-        }
-        root.addEventListener('click',event=>{
-          const button=event.target.closest('button[data-delta]');
-          if(!button || !root.contains(button)) return;
-          const index=Number(button.dataset.index);
-          quantities[index]=Math.max(0,Math.min(99,quantities[index]+Number(button.dataset.delta)));
-          update();
-          if(button.disabled || (button.dataset.location==='cart' && quantities[index]===0)) {
-            const replacement=root.querySelector('button[data-location="product"][data-index="'+index+'"][data-delta="'+(quantities[index]===99?'-1':'1')+'"]');
-            if(replacement && !replacement.closest('[hidden]')) replacement.focus();
-            else filters.querySelector('button[aria-pressed="true"]').focus();
-          }
-        });
-        send.addEventListener('click',event=>{ if(send.getAttribute('aria-disabled')==='true') event.preventDefault(); });
-        update();
-      })();
-      </script>
+      <script src="js/order.js"></script>
         </div>
       </div>
     </section>

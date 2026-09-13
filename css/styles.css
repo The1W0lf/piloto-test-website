@@ -61,6 +61,8 @@ section { padding: var(--space-xl) 0; }
   }
 }
 
+.icon-sprite { display: none; }
+
 a:focus-visible, button:focus-visible {
   outline: 3px solid var(--color-gold);
   outline-offset: 2px;
