@@ -1,9 +1,25 @@
-    <!-- BEGIN self-contained WhatsApp ordering section: copy through END into another page. -->
-    <section id="commander" aria-labelledby="pollito-order-title">
+    <section class="menu order-menu" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <h2 class="section-title reveal" id="menu-title">Notre Menu</h2>
+        <p class="section-subtitle reveal">Découvrez nos six catégories et composez votre commande en quelques clics.</p>
+        <div style="text-align:center">
+          <button type="button" class="btn po-open reveal" data-order-open aria-haspopup="dialog" aria-controls="commander">Composer ma commande</button>
+        </div>
+      </div>
+      <div id="commander" class="po-dialog" role="dialog" aria-modal="true" aria-labelledby="pollito-order-title" hidden>
+        <div class="po-dialog-card">
+          <button type="button" class="po-close" aria-label="Fermer la commande">×</button>
       <style>
-        #commander { background:var(--color-cream,#FFF8F0); color:var(--color-ink,#1A1A1A); font:16px/1.5 var(--font-body,'Nunito',sans-serif); padding:64px 16px; scroll-margin-top:88px; }
+        #menu .po-open { background:var(--color-primary,#E31E24); color:white; border:0; margin-top:8px; }
+        #menu .po-open:hover { background:var(--color-primary-dark,#A81419); transform:translateY(-2px); }
+        #commander { position:fixed; inset:0; z-index:1000; display:grid; place-items:center; overflow:auto; padding:16px; background:rgba(26,26,26,.68); backdrop-filter:blur(4px); color:var(--color-ink,#1A1A1A); font:16px/1.5 var(--font-body,'Nunito',sans-serif); }
+        #commander[hidden] { display:none!important; }
+        #commander .po-dialog-card { position:relative; width:min(1168px,100%); max-height:calc(100dvh - 32px); overflow:auto; border-radius:24px; background:var(--color-cream,#FFF8F0); box-shadow:0 24px 70px rgba(26,26,26,.28); animation:po-enter 220ms ease-out; }
+        #commander .po-close { position:sticky; z-index:2; top:12px; float:right; margin:12px 12px -56px 0; border:0; border-radius:999px; background:#fff; color:#A81419; font-size:28px; line-height:1; box-shadow:0 4px 16px rgba(26,26,26,.14); }
+        body.po-modal-open { overflow:hidden; }
+        @keyframes po-enter { from { opacity:0; transform:translateY(12px) scale(.985); } to { opacity:1; transform:none; } }
         #commander * { box-sizing:border-box; }
-        #commander .po-wrap { max-width:1168px; margin:auto; }
+        #commander .po-wrap { max-width:1168px; margin:auto; padding:32px; }
         #commander h2,#commander h3,#commander button { font-family:var(--font-heading,'Fredoka',sans-serif); }
         #commander h2 { color:var(--color-primary,#E31E24); font-size:clamp(28px,4vw,40px); margin:0 0 12px; }
         #commander .po-intro { margin:0 0 24px; }
@@ -32,12 +48,12 @@
         #commander .po-note { font-size:14px; margin:12px 0 0; color:#555; }
         #commander [hidden] { display:none!important; }
         #commander .po-status { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
-        @media(max-width:767px) { #commander .po-layout { grid-template-columns:1fr; } #commander .po-cart { position:static; padding:20px; } #commander .po-product { padding:12px; } #commander h3 { font-size:16px; } }
+        @media(max-width:767px) { #commander { padding:0; place-items:stretch; } #commander .po-dialog-card { min-height:100dvh; max-height:100dvh; border-radius:0; } #commander .po-wrap { padding:24px 16px calc(24px + env(safe-area-inset-bottom)); } #commander .po-layout { grid-template-columns:1fr; } #commander .po-cart { position:static; padding:20px; } #commander .po-product { padding:12px; } #commander h3 { font-size:16px; } }
         @media(max-width:359px) { #commander .po-products { grid-template-columns:1fr; } }
         @media(prefers-reduced-motion:reduce) { #commander button { transition:none; } }
       </style>
       <div class="po-wrap">
-        <h2 id="pollito-order-title">Composez votre commande</h2>
+        <h2 id="pollito-order-title" tabindex="-1">Composez votre commande</h2>
         <p class="po-intro">Choisissez vos envies, ajustez les quantités et envoyez votre commande sur WhatsApp.</p>
         <div class="po-layout">
           <div>
@@ -59,7 +75,48 @@
       <script type="application/json" class="po-data">[{"name":"Bokka Spicy","price":39,"image":"assets/images/menu-items/bokka-spicy.jpg","category":"bokka"},{"name":"Bokka Pizza","price":39,"image":"assets/images/menu-items/pizza.jpg","category":"bokka"},{"name":"Bokka Original","price":39,"image":"assets/images/menu-items/original.jpg","category":"bokka"},{"name":"Bokka Chili","price":50,"image":"assets/images/menu-items/chilli.jpg","category":"bokka"},{"name":"Bokka Swiss","price":50,"image":"assets/images/menu-items/swiss-bokka.jpg","category":"bokka"},{"name":"Burger El Pollo","price":28,"image":"assets/images/menu-items/el-pollo.jpg","category":"burgers"},{"name":"Burger Suprimo","price":28,"image":"assets/images/menu-items/suprimo.jpg","category":"burgers"},{"name":"Burger El Classico","price":42,"image":"assets/images/menu-items/el-classico.jpg","category":"burgers"},{"name":"Burger El Capo","price":42,"image":"assets/images/menu-items/el-capo.jpg","category":"burgers"},{"name":"Tacos Boursin","price":42,"image":"assets/images/menu-items/tacos-boursin.jpg","category":"tacos"},{"name":"Tacos Viande Hachée","price":40,"image":"assets/images/menu-items/viande-hachee.jpg","category":"tacos"},{"name":"Tacos Poulet","price":37,"image":"assets/images/menu-items/poulet.jpg","category":"tacos"},{"name":"Tacos Crispé","price":38,"image":"assets/images/menu-items/tacos-crispe.jpg","category":"tacos"},{"name":"Tacos Cordon Bleu","price":38,"image":"assets/images/menu-items/cordon-bleu.jpg","category":"tacos"},{"name":"Tacos Jalapiño","price":45,"image":"assets/images/menu-items/jalapino-tacos.jpg","category":"tacos"},{"name":"Wrap Crispé","price":55,"image":"assets/images/menu-items/wrap-crispy.jpg","category":"paninis"},{"name":"Panini Crispé","price":40,"image":"assets/images/menu-items/panini-crispy.jpg","category":"paninis"},{"name":"Tenders x5","price":35,"image":"assets/images/menu-items/tenders.jpg","category":"plats"},{"name":"Frites au Fromage","price":35,"image":"assets/images/menu-items/cheese-fries.jpg","category":"plats"},{"name":"Nuggets Chili Fromage","price":25,"image":"assets/images/menu-items/chili-cheese.jpg","category":"plats"},{"name":"Bâtonnets de Mozzarella","price":25,"image":"assets/images/menu-items/mozzastick.jpg","category":"plats"},{"name":"Rondelles d'Oignon","price":15,"image":"assets/images/menu-items/onion-ring.jpg","category":"plats"},{"name":"Nuggets","price":15,"image":"assets/images/menu-items/nugget.jpg","category":"plats"},{"name":"Coca Cola","price":12,"image":"assets/images/menu-items/coca-cola.jpg","category":"boissons"},{"name":"Fanta Orange","price":12,"image":"assets/images/menu-items/fanta-orange.jpg","category":"boissons"},{"name":"Sprite","price":12,"image":"assets/images/menu-items/sprite.jpg","category":"boissons"},{"name":"Hawaï Tropical","price":12,"image":"assets/images/menu-items/hawai-tropical.jpg","category":"boissons"},{"name":"Pom's Pomme","price":15,"image":"assets/images/menu-items/poms-pomme.jpg","category":"boissons"}]</script>
       <script>
       (() => {
-        const root = document.currentScript.closest('section');
+        const root = document.currentScript.closest('#commander');
+        const section = root.closest('#menu');
+        const openButtons = document.querySelectorAll('[data-order-open]');
+        const closeButton = root.querySelector('.po-close');
+        const focusableSelector = 'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+        let returnFocus;
+        openButtons.forEach(button => button.setAttribute('aria-expanded', 'false'));
+        const openOrder = event => {
+          if (event) event.preventDefault();
+          returnFocus = event?.currentTarget || document.activeElement;
+          root.hidden = false;
+          document.body.classList.add('po-modal-open');
+          openButtons.forEach(button => button.setAttribute('aria-expanded', 'true'));
+          root.querySelector('#pollito-order-title').focus();
+        };
+        const closeOrder = () => {
+          root.hidden = true;
+          document.body.classList.remove('po-modal-open');
+          openButtons.forEach(button => button.setAttribute('aria-expanded', 'false'));
+          if (returnFocus && typeof returnFocus.focus === 'function') returnFocus.focus();
+        };
+        openButtons.forEach(button => button.addEventListener('click', openOrder));
+        closeButton.addEventListener('click', closeOrder);
+        root.addEventListener('click', event => { if (event.target === root) closeOrder(); });
+        document.addEventListener('keydown', event => {
+          if (root.hidden) return;
+          if (event.key === 'Escape') {
+            closeOrder();
+            return;
+          }
+          if (event.key !== 'Tab') return;
+          const focusable = Array.from(root.querySelectorAll(focusableSelector)).filter(element => !element.closest('[hidden]'));
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        });
         const items = JSON.parse(root.querySelector('.po-data').textContent);
         const quantities = items.map(() => 0);
         const money = value => new Intl.NumberFormat('fr-MA', { maximumFractionDigits: 2 }).format(value) + ' DH';
@@ -142,5 +199,6 @@
         update();
       })();
       </script>
+        </div>
+      </div>
     </section>
-    <!-- END self-contained WhatsApp ordering section -->
